@@ -18,6 +18,11 @@ class MyHomePage extends StatelessWidget {
     Transaction(id: 't1',title: 'New Shoes',amount:3000.0,date: DateTime.now() ),
     Transaction(id: 't2',title: 'Groceries',amount: 220.50,date: DateTime.now())
   ];
+  //String titleInput;
+  //String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +30,7 @@ class MyHomePage extends StatelessWidget {
       ),centerTitle: true,
       ),
       body:Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Card(
@@ -33,9 +38,40 @@ class MyHomePage extends StatelessWidget {
             child: Container(width: double.infinity,child: Text('Chart!!')),
             elevation: 5,
           ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    controller: titleController,
+                    //onChanged: (value){
+                     // titleInput = value;
+                   // },
+                    decoration: InputDecoration(labelText:'Title'),
+                  ),
+                  TextField(
+                    controller: amountController,
+                   // onChanged: (amt){
+                     // amountInput = amt;
+                    //},
+                    decoration: InputDecoration(labelText:'Amount'),
+                  ),
+                  FlatButton(
+                    child: Text('Add Transaction'),
+                    textColor: Colors.purple,
+                    onPressed: (){} ,
+                  )
+                ],
+              ),
+            ),
+          ),
           Column(
             children: transactions.map((tx){
-              return Card(child: Row(
+              return Card(
+                child: Row(
               children: <Widget>[
                 Container(
                   margin:EdgeInsets.symmetric(
