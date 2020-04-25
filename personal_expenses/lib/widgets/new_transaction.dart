@@ -31,7 +31,7 @@ class NewTransaction extends StatelessWidget {
               // titleInput = value;
               // },
               decoration: InputDecoration(labelText:'Title'),
-              onSubmitted: (_) => submitData,
+              onSubmitted: (_) => submitData(),
             ),
             TextField(
               controller: amountController,
@@ -40,14 +40,12 @@ class NewTransaction extends StatelessWidget {
               //},
               decoration: InputDecoration(labelText:'Amount'),
               keyboardType: TextInputType.number,
-              onSubmitted: (_) => submitData,
+              onSubmitted: (_) => submitData(),
             ),
             FlatButton(
               child: Text('Add Transaction'),
               textColor: Colors.purple,
-              onPressed: (){
-
-              } ,
+              onPressed: submitData,
             )
           ],
         ),

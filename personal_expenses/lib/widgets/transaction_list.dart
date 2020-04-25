@@ -23,7 +23,7 @@ TransactionList(this.transactions);
                     )
                 ),
                 child: Text(
-                  "\u20B9" + tx.amount.toString(),
+                  "\u20B9" + tx.amount.toStringAsFixed(0),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18 ,
