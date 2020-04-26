@@ -18,7 +18,8 @@ TransactionList(this.transactions);
                 ),
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.purple,
+                      color: Theme.of(context).primaryColorDark,
+                      //color: Colors.red,
                       width: 2,
                     )
                 ),
@@ -27,7 +28,8 @@ TransactionList(this.transactions);
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18 ,
-                    color: Colors.purple ,
+                    color: Theme.of(context).primaryColorDark,
+                    //color: Colors.red ,
                   ),
                 ),
                 padding: EdgeInsets.all(10),
@@ -36,10 +38,7 @@ TransactionList(this.transactions);
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(tx.title,
-                    style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold
-                    ) ,
+                    style: Theme.of(context).textTheme.copyWith().title,
                   ),
                   Text(
                     DateFormat.yMMMd().format(tx.date),
