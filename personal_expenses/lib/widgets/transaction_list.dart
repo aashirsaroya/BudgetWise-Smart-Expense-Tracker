@@ -6,7 +6,20 @@ final List<Transaction> transactions;
 TransactionList(this.transactions);
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return transactions.isEmpty ? Column(
+      children: <Widget>[
+        Text('No transactions added yet!',style:  Theme.of(context).textTheme.title,),
+        SizedBox(
+          height: 50,
+        ),
+        Container(
+          height: 300,
+            child: Image.asset('assets/images/waiting.png',
+            fit: BoxFit.cover,
+            )
+        ),
+      ],
+    ) : Column(
       children: transactions.map((tx){
         return Card(
           child: Row(
